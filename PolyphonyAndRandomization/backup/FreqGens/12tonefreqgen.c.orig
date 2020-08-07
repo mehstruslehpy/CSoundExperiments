@@ -1,0 +1,22 @@
+/*
+12 tone freq gen: prints a sequence of 12 tones in csound score format.
+*/
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+#include <time.h>
+
+unsigned pianoNoteToFreq(unsigned);
+int main()
+{
+	//start rng
+	srand(time(NULL));
+	        int num = (rand() % 
+			           (upper - lower + 1)) + lower; 
+					           printf("%d ", num); 
+	unsigned notecount = 20;
+}
+unsigned pianoNoteToFreq(unsigned pianonote)
+{
+	return pow(2,(pianonote-49)/12)*440;
+}

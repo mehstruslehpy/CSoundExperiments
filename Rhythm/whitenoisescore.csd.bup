@@ -1,0 +1,24 @@
+<CsoundSynthesizer>
+<CsOptions>
+-+rtaudio=pulse -o dac
+</CsOptions>
+<CsInstruments>
+sr = 44100
+ksmps = 32
+nchnls = 2
+0dbfs  = 1
+;hihat
+instr 1
+asig1 noise p4, p5
+asig2 clip asig1, 2, .9	;clip signal
+ahipass,alp,abp,abr statevar asig2, p6, p7
+      outs ahipass,ahipass
+endin
+</CsInstruments>
+<CsScore>
+;instrument start duration amp beta cutoff res
+i1 0 .5 .5 .5 5000 1.5
+i1 1 .5 .5 .5 5000 1.5
+e
+</CsScore>
+</CsoundSynthesizer>
